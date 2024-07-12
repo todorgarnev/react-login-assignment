@@ -1,5 +1,11 @@
+import { Login } from "@pages";
+
 function App() {
-  return <>login page</>;
+  return (
+    <>
+      <Login />
+    </>
+  );
 }
 
 export default App;
