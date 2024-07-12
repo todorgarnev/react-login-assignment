@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { FunctionComponent, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { axios } from "@/utils";
 
 export const Login: FunctionComponent = () => {
   const { data, refetch } = useQuery({
     queryKey: ["submitLogin"],
-    queryFn: ({ signal }) => axios("/login", { signal }).then((res) => res.data),
+    queryFn: ({ signal }) => axios("/login", { signal }).then((res: { data: string }) => res.data),
     enabled: false,
   });
 
