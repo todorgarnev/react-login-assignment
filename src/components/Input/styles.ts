@@ -12,4 +12,9 @@ export const InputWrapper = styled.div`
   input {
     flex: 1;
   }
+
+  label,
+  input {
+    cursor: pointer;
+  }
 `;

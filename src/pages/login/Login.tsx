@@ -17,11 +17,11 @@ export const Login: FunctionComponent = () => {
 
   const onSubmit: SubmitHandler<LoginForm> = (data) => {
     console.log(data);
-    refetch();
+    // refetch();
   };
 
   useEffect(() => {
-    console.log("data: ", data);
+    console.log("data >>>: ", data);
   }, [data]);
 
   return (
@@ -29,10 +29,10 @@ export const Login: FunctionComponent = () => {
       <Header>Login</Header>
 
       <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-        <Input label="Email" type="email" {...register("email")} />
-        <Input label="Password" type="password" {...register("password")} />
+        <Input name="email" label="Email" type="email" register={register} />
+        <Input name="password" label="Password" type="password" register={register} />
 
-        <Button type="button" variant="primary">
+        <Button type="submit" variant="primary">
           Submit
         </Button>
       </FormWrapper>
