@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 
 export const InputWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
+  row-gap: 0.5rem;
 
   label {
     font-size: 1.4rem;
@@ -11,6 +12,11 @@ export const InputWrapper = styled.div`
 
   input {
     flex: 1;
+  }
+
+  span {
+    grid-column: 1/-1;
+    color: var(--error-color);
   }
 
   label,

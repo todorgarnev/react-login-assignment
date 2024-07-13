@@ -11,6 +11,7 @@
 :root {
   --primary-color: #003663;
   --secondary-color: #ddd;
+  --error-color: #DC143C;
 
   font-size: 10px;
 }
