@@ -9,6 +9,9 @@
 }
 
 :root {
+  --primary-color: #003663;
+  --secondary-color: #ddd;
+
   font-size: 10px;
 }
 
