@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
 import { Button, Input, Loader } from "@/components";
 import { axios } from "@/utils";
 import { FormWrapper, Header } from "@/styles";
@@ -11,6 +12,7 @@ import { ServerError } from "./styles";
 
 export const Login: FunctionComponent = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -35,7 +37,7 @@ export const Login: FunctionComponent = () => {
 
   return (
     <>
-      <Header>Login</Header>
+      <Header>{t("login")}</Header>
 
       <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
         {submitLogin.isPending ? (
