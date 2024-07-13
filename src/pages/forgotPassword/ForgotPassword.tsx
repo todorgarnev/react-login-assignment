@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Input } from "@/components";
+import { Button, Input, Loader } from "@/components";
 import { axios } from "@/utils";
 import { BtnVariant, ForgotPasswordForm, ForgotPasswordSchema } from "@/types";
 import { FormWrapper, Header } from "@/styles";
@@ -35,19 +35,21 @@ export const ForgotPassword: FunctionComponent = () => {
     <>
       <Header>Forgot Password</Header>
 
-      {submitLogin.isPending ? (
-        "Loading..."
-      ) : (
-        <>
-          <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
-            <Input name="email" label="Email" error={errors.email} register={register} />
+      <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
+        {submitLogin.isPending ? (
+          <Loader />
+        ) : (
+          <Input name="email" label="Email" error={errors.email} register={register} />
+        )}
 
-            <Button type="submit" variant={BtnVariant.BTN} isDisabled={!emailValue}>
-              Submit
-            </Button>
-          </FormWrapper>
-        </>
-      )}
+        <Button
+          type="submit"
+          variant={BtnVariant.BTN}
+          isDisabled={!emailValue || submitLogin.isPending}
+        >
+          Submit
+        </Button>
+      </FormWrapper>
     </>
   );
 };

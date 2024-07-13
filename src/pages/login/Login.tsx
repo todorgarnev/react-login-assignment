@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Input } from "@/components";
+import { Button, Input, Loader } from "@/components";
 import { axios } from "@/utils";
 import { FormWrapper, Header } from "@/styles";
 import { BtnVariant, LoginForm, LoginSchema } from "@/types";
@@ -37,30 +37,30 @@ export const Login: FunctionComponent = () => {
     <>
       <Header>Login</Header>
 
-      {submitLogin.isPending ? (
-        "Loading..."
-      ) : (
-        <>
-          <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
+      <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
+        {submitLogin.isPending ? (
+          <Loader />
+        ) : (
+          <>
             <Input name="email" label="Email" error={errors.email} register={register} />
             <Input name="password" label="Password" error={errors.password} register={register} />
 
             {submitLogin.isError && <ServerError>Invalid credentials</ServerError>}
+          </>
+        )}
 
-            <Button
-              type="submit"
-              variant={BtnVariant.BTN}
-              isDisabled={!emailValue || !passwordValue}
-            >
-              Submit
-            </Button>
-          </FormWrapper>
+        <Button
+          type="submit"
+          variant={BtnVariant.BTN}
+          isDisabled={!emailValue || !passwordValue || submitLogin.isPending}
+        >
+          Submit
+        </Button>
+      </FormWrapper>
 
-          <Button variant={BtnVariant.TEXT} clickHandler={() => navigate("/forgot-password")}>
-            Forgot password
-          </Button>
-        </>
-      )}
+      <Button variant={BtnVariant.TEXT} clickHandler={() => navigate("/forgot-password")}>
+        Forgot password
+      </Button>
     </>
   );
 };
