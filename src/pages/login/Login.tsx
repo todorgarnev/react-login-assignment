@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, Input } from "@/components";
 import { axios } from "@/utils";
 import { Header } from "@/styles";
-import { LoginForm } from "./types";
+import { LoginForm } from "@/types";
 import { FormWrapper } from "./styles";
 import { useNavigate } from "react-router-dom";
 
@@ -25,6 +25,7 @@ export const Login: FunctionComponent = () => {
   return (
     <>
       <Header>Login</Header>
+
       {submitLogin.isPending ? (
         "Loading..."
       ) : (
