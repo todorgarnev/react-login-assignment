@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import { UseFormRegister } from "react-hook-form";
-import { InputWrapper } from "./styles";
 import { LoginForm } from "@/pages/login/types";
+import { InputWrapper } from "./styles";
 
 type InputProps = PropsWithChildren & {
   label: string;
