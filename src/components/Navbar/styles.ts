@@ -5,4 +5,8 @@ export const NavWrapper = styled.nav`
   width: 100%;
   color: var(--secondary-color);
   background-color: var(--primary-color);
+
+  span {
+    cursor: pointer;
+  }
 `;

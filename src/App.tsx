@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Login } from "@/pages";
+import { Login, Success } from "@/pages";
 import { Layout } from "@/components";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route element={<Login />} path="/" />
+        <Route element={<Success />} path="/success" />
         <Route element={<Navigate to="/" />} path="*" />
       </Route>
     </Routes>

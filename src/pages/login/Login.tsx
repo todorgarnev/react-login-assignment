@@ -25,15 +25,18 @@ export const Login: FunctionComponent = () => {
   return (
     <>
       <Header>Login</Header>
+      {submitLogin.isPending ? (
+        "Loading..."
+      ) : (
+        <FormWrapper onSubmit={handleSubmit(onSubmit)}>
+          <Input name="email" label="Email" type="email" register={register} />
+          <Input name="password" label="Password" type="password" register={register} />
 
-      <FormWrapper onSubmit={handleSubmit(onSubmit)}>
-        <Input name="email" label="Email" type="email" register={register} />
-        <Input name="password" label="Password" type="password" register={register} />
-
-        <Button type="submit" variant="primary">
-          Submit
-        </Button>
-      </FormWrapper>
+          <Button type="submit" variant="primary">
+            Submit
+          </Button>
+        </FormWrapper>
+      )}
     </>
   );
 };

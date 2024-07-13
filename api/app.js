@@ -17,7 +17,6 @@ app.listen("3000", () => {
 });
 
 app.post("/api/login", (req, res) => {
-  console.log("req: ", req.body);
   const { email, password } = req.body;
   const users = [
     {
@@ -37,14 +36,21 @@ app.post("/api/login", (req, res) => {
       password: "12345",
     },
   ];
+  let isValid = false;
 
   for (const user of users) {
     if (user.email === email && user.password === password) {
-      return res.status(200).end();
+      isValid = true;
     }
   }
 
-  return res.status(401).send({ error: "Invalid credentials" });
+  setTimeout(() => {
+    if (isValid) {
+      return res.status(200).end();
+    } else {
+      return res.status(401).end();
+    }
+  }, 1000);
 });
 
 export default app;
