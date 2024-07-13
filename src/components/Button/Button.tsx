@@ -1,9 +1,10 @@
 import { FunctionComponent, PropsWithChildren } from "react";
+import { BtnVariant } from "@/types";
 import { CustomButton } from "./styles";
 
 type ButtonProps = PropsWithChildren & {
-  variant: "primary" | "secondary";
-  isDisabled: boolean;
+  variant: BtnVariant;
+  isDisabled?: boolean;
   type?: "button" | "submit";
   clickHandler?: () => void;
 };
@@ -11,8 +12,8 @@ type ButtonProps = PropsWithChildren & {
 export const Button: FunctionComponent<ButtonProps> = ({
   children,
   variant,
-  isDisabled,
   clickHandler,
+  isDisabled = false,
   type = "button",
 }) => {
   const onClickHandler = () => {

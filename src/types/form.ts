@@ -1,12 +1,18 @@
 import { z, ZodType } from "zod";
 
-export type LoginForm = {
+export type ForgotPasswordForm = {
   email: string;
-  password: string;
 };
 
-export const LoginSchema: ZodType<LoginForm> = z.object({
+export type LoginForm = ForgotPasswordForm & {
+  password?: string;
+};
+
+export const ForgotPasswordSchema = z.object({
   email: z.string().email("Invalid email"),
+}) satisfies z.ZodType<ForgotPasswordForm>;
+
+export const LoginSchema: ZodType<LoginForm> = ForgotPasswordSchema.extend({
   password: z
     .string()
     .transform((t) => t?.trim())

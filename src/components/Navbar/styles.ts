@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
+import { logoSpin } from "@/styles";
 
 export const NavWrapper = styled.nav`
-  padding: 3rem 2rem;
-  width: 100%;
-  color: var(--secondary-color);
+  padding: 2rem;
   background-color: var(--primary-color);
 
-  span {
+  svg {
+    animation: ${logoSpin} 10s linear infinite;
     cursor: pointer;
   }
 `;

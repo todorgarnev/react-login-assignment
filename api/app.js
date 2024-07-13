@@ -53,4 +53,10 @@ app.post("/api/login", (req, res) => {
   }, 1000);
 });
 
+app.post("/api/reset-password", (req, res) => {
+  setTimeout(() => {
+    return res.status(200).end();
+  }, 1000);
+});
+
 export default app;

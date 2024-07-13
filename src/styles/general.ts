@@ -5,3 +5,16 @@ export const Header = styled.h1`
   font-size: 2.4rem;
   color: var(--primary-color);
 `;
+
+export const FormWrapper = styled.form`
+  margin-inline: auto;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: clamp(40ch, 100%, 100ch);
+
+  button {
+    margin-inline: auto;
+  }
+`;
