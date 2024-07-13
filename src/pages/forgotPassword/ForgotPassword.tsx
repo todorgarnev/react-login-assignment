@@ -23,7 +23,7 @@ export const ForgotPassword: FunctionComponent = () => {
   const submitLogin = useMutation({
     mutationFn: (email: ForgotPasswordForm) => axios.post("/reset-password", email),
     onSuccess: () => {
-      navigate("/success");
+      navigate("/success", { state: emailValue });
     },
   });
 
