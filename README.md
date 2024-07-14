@@ -18,7 +18,7 @@ Create a login page containing a login form with Email and Password fields, Logi
 
 To run the app, follow these steps.
 
-##### React App
+#### React App
 
 1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
 2. From the project folder execute the following commands:
@@ -35,7 +35,7 @@ To run the client app:
   npm run dev
 ```
 
-##### Server
+#### Server
 
 The project also has small server for handling mocked request - api folder.
 
