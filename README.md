@@ -54,4 +54,8 @@ To run the server:
   npm run dev
 ```
 
+---
+
+When both are running:
+
 Browse to [http://localhost:5173](http://localhost:5173) and see the running app.
