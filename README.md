@@ -37,7 +37,7 @@ To run the client app:
 
 #### Server
 
-The project also has small server for handling mocked request - api folder.
+The project also has small server for handling hard requests - api folder.
 
 1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
 2. From the api folder execute the following commands:
