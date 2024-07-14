@@ -12,6 +12,7 @@ Create a login page containing a login form with Email and Password fields, Logi
 4. Zod
 5. React i18n
 6. Axios
+7. Emotion
 
 ### Running The App locally
 
@@ -20,7 +21,6 @@ To run the app, follow these steps.
 1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
 
 The project also has small server for handling mocked request.
-You need to install both packages - FE and sever.
 
 2. From the project folder and api folder, which is inside, execute the following commands:
 
@@ -30,7 +30,7 @@ To install dependencies:
   npm install
 ```
 
-To run the client app:
+To run the client app and the server:
 
 ```shell
   npm run dev
