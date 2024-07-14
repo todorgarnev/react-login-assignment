@@ -13,7 +13,7 @@ export const Navbar: FunctionComponent = () => {
 
   const langChangeHandler = (lang: Languages) => {
     i18n.changeLanguage(lang);
-    document.title = t("titles.title");
+    document.title = t("titles.docTitle");
   };
 
   return (

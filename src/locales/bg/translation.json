@@ -2,7 +2,7 @@
 	"titles": {
 		"login": "Влез",
 		"changePassword": "Смяна на парола",
-		"title": "Задача"
+		"docTitle": "Задача"
 	},
 	"buttons": {
 		"submit": "Прати"

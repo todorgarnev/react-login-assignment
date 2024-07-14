@@ -2,7 +2,7 @@
 	"titles": {
 		"login": "Login",
 		"changePassword": "Change Password",
-		"title": "Login assignment"
+		"docTitle": "Login assignment"
 	},
 	"buttons": {
 		"submit": "Submit"
