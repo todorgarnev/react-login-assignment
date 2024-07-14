@@ -1,14 +1,14 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import { FieldError, UseFormRegister } from "react-hook-form";
-import { ForgotPasswordForm, LoginForm } from "@/types";
+import { UseFormRegister } from "react-hook-form";
 import { CustomInput, InputWrapper } from "./styles";
+import { Forms } from "@/types";
 
 type InputProps = PropsWithChildren & {
   label: string;
   name: "email" | "password";
   hasValue: boolean;
-  error: FieldError | undefined;
-  register: UseFormRegister<LoginForm | ForgotPasswordForm>;
+  error: string;
+  register: UseFormRegister<Forms>;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -29,6 +29,6 @@ export const Input: FunctionComponent<InputProps> = ({
 
     <label htmlFor={name}>{label}</label>
 
-    {error && <span>{error.message}</span>}
+    {error && <span>{error}</span>}
   </InputWrapper>
 );

@@ -5,8 +5,9 @@ import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { Button, Input, Loader } from "@/components";
+import { useFormError } from "@/hooks";
 import { axios } from "@/utils";
-import { BtnVariant, ForgotPasswordForm, ForgotPasswordSchema } from "@/types";
+import { BtnVariant, Forms, FormsSchema } from "@/types";
 import { FormWrapper, Header } from "@/styles";
 
 export const ForgotPassword: FunctionComponent = () => {
@@ -17,19 +18,20 @@ export const ForgotPassword: FunctionComponent = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<ForgotPasswordForm>({
-    resolver: zodResolver(ForgotPasswordSchema),
+  } = useForm<Forms>({
+    resolver: zodResolver(FormsSchema),
   });
   const emailValue = useWatch({ control, name: "email" });
+  const { emailError } = useFormError(errors);
 
   const submitLogin = useMutation({
-    mutationFn: (email: ForgotPasswordForm) => axios.post("/reset-password", email),
+    mutationFn: (email: Forms) => axios.post("/reset-password", email),
     onSuccess: () => {
       navigate("/success", { state: emailValue });
     },
   });
 
-  const onSubmit: SubmitHandler<ForgotPasswordForm> = ({ email }) => {
+  const onSubmit: SubmitHandler<Forms> = ({ email }) => {
     submitLogin.mutate({ email });
   };
 
@@ -45,7 +47,7 @@ export const ForgotPassword: FunctionComponent = () => {
             name="email"
             label={t("labels.email")}
             hasValue={!!emailValue}
-            error={errors.email}
+            error={emailError}
             register={register}
           />
         )}

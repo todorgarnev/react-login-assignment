@@ -5,9 +5,10 @@ import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { Button, Input, Loader } from "@/components";
+import { useFormError } from "@/hooks";
 import { axios } from "@/utils";
 import { FormWrapper, Header } from "@/styles";
-import { BtnVariant, LoginForm, LoginSchema } from "@/types";
+import { BtnVariant, Forms, FormsSchema } from "@/types";
 import { ServerError } from "./styles";
 
 export const Login: FunctionComponent = () => {
@@ -18,20 +19,21 @@ export const Login: FunctionComponent = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<LoginForm>({
-    resolver: zodResolver(LoginSchema),
+  } = useForm<Forms>({
+    resolver: zodResolver(FormsSchema),
   });
   const emailValue = useWatch({ control, name: "email" });
   const passwordValue = useWatch({ control, name: "password" });
+  const { emailError, passwordError } = useFormError(errors);
 
   const submitLogin = useMutation({
-    mutationFn: (userLogin: LoginForm) => axios.post("/login", userLogin),
+    mutationFn: (userLogin: Forms) => axios.post("/login", userLogin),
     onSuccess: () => {
       navigate("/success");
     },
   });
 
-  const onSubmit: SubmitHandler<LoginForm> = ({ email, password }) => {
+  const onSubmit: SubmitHandler<Forms> = ({ email, password }) => {
     submitLogin.mutate({ email, password });
   };
 
@@ -48,14 +50,14 @@ export const Login: FunctionComponent = () => {
               name="email"
               label={t("labels.email")}
               hasValue={!!emailValue}
-              error={errors.email}
+              error={emailError}
               register={register}
             />
             <Input
               name="password"
               label={t("labels.password")}
               hasValue={!!passwordValue}
-              error={errors.password}
+              error={passwordError}
               register={register}
             />
 

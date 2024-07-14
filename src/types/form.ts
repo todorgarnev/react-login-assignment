@@ -1,21 +1,12 @@
-import { z, ZodType } from "zod";
-import i18next from "i18next";
+import { z } from "zod";
 
-export type ForgotPasswordForm = {
-  email: string;
-};
-
-export type LoginForm = ForgotPasswordForm & {
-  password?: string;
-};
-
-export const ForgotPasswordSchema = z.object({
-  email: z.string().email(i18next.t("errors.invalidEmail")),
-}) satisfies z.ZodType<ForgotPasswordForm>;
-
-export const LoginSchema: ZodType<LoginForm> = ForgotPasswordSchema.extend({
+export const FormsSchema = z.object({
+  email: z.string().email({ message: "errors.invalidEmail" }),
   password: z
     .string()
     .transform((t) => t?.trim())
-    .pipe(z.string().min(1, { message: i18next.t("errors.invalidPassword") })),
+    .pipe(z.string().min(1, { message: "errors.invalidPassword" }))
+    .optional(),
 });
+
+export type Forms = z.infer<typeof FormsSchema>;
