@@ -20,7 +20,7 @@ To run the app, follow these steps.
 
 1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
 
-The project also has small server for handling mocked request.
+The project also has small server for handling mocked request (api folder).
 
 2. From the project folder and api folder, which is inside, execute the following commands:
 
