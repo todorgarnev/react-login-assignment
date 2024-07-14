@@ -17,6 +17,8 @@
 		"usFlagAlt": "English"
 	},
 	"errors": {
-		"invalidCredentials": "Invalid credentials"
+		"invalidCredentials": "Invalid credentials",
+		"invalidEmail": "Invalid email",
+		"invalidPassword": "Password is required"
 	}
 }

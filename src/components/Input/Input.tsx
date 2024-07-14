@@ -17,20 +17,18 @@ export const Input: FunctionComponent<InputProps> = ({
   hasValue,
   error,
   register,
-}) => {
-  return (
-    <InputWrapper>
-      <CustomInput
-        id={name}
-        type={name}
-        $hasError={!!error}
-        $hasValue={hasValue}
-        {...register(name)}
-      />
+}) => (
+  <InputWrapper>
+    <CustomInput
+      id={name}
+      type={name}
+      $hasError={!!error}
+      $hasValue={hasValue}
+      {...register(name)}
+    />
 
-      <label htmlFor={name}>{label}</label>
+    <label htmlFor={name}>{label}</label>
 
-      {error && <span>{error.message}</span>}
-    </InputWrapper>
-  );
-};
+    {error && <span>{error.message}</span>}
+  </InputWrapper>
+);

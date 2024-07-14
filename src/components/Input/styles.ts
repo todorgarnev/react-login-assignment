@@ -33,6 +33,15 @@ export const CustomInput = styled.input<{ $hasValue: boolean; $hasError: boolean
   font-size: 1.2rem;
   outline: 0.2rem solid ${({ $hasError }) => ($hasError ? "var(--error-color)" : "transparent")};
 
+  ${({ $hasError }) =>
+    $hasError
+      ? css`
+          & + label {
+            top: 1.7rem;
+          }
+        `
+      : ""}
+
   &:focus {
     outline: 0.2rem solid
       ${({ $hasError }) => ($hasError ? "var(--error-color)" : "var(--primary-color)")};

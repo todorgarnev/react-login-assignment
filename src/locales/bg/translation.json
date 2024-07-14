@@ -17,6 +17,8 @@
 		"usFlagAlt": "Английски език"
 	},
 	"errors": {
-		"invalidCredentials": "Невалидни входни данни"
+		"invalidCredentials": "Невалидни входни данни",
+		"invalidEmail": "Невалиден имейл",
+		"invalidPassword": "Паролата е задължителна"
 	}
 }
