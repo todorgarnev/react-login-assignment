@@ -12,6 +12,7 @@
   --primary-color: #003663;
   --secondary-color: #ddd;
   --error-color: #DC143C;
+  --border-radius: 4rem;
 
   font-size: 10px;
 }

@@ -8,12 +8,12 @@ export const CustomButton = styled.button<{
 }>`
   padding: ${({ $variant }) => ($variant === BtnVariant.BTN ? "1rem 2rem" : "0")};
   width: fit-content;
+  border: none;
+  border-radius: var(--border-radius);
   background-color: ${({ $variant }) =>
     $variant === BtnVariant.BTN ? "var(--primary-color)" : "transparent"};
   color: ${({ $variant }) =>
     $variant === BtnVariant.BTN ? "var(--secondary-color)" : "var(--primary-color)"};
-  border: none;
-  border-radius: 4rem;
   font-size: ${({ $variant }) => ($variant === BtnVariant.BTN ? "1.4rem" : "1.2rem")};
   cursor: pointer;
 

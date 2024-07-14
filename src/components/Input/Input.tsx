@@ -1,7 +1,7 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
 import { ForgotPasswordForm, LoginForm } from "@/types";
-import { InputWrapper } from "./styles";
+import { CustomInput, InputWrapper } from "./styles";
 
 type InputProps = PropsWithChildren & {
   label: string;
@@ -15,7 +15,7 @@ export const Input: FunctionComponent<InputProps> = ({ label, name, error, regis
     <InputWrapper>
       <label htmlFor={name}>{label}</label>
 
-      <input id={name} type={name} {...register(name)} />
+      <CustomInput id={name} type={name} $hasError={!!error} {...register(name)} />
 
       {error && <span>{error.message}</span>}
     </InputWrapper>
