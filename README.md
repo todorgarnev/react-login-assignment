@@ -19,10 +19,7 @@ Create a login page containing a login form with Email and Password fields, Logi
 To run the app, follow these steps.
 
 1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
-
-The project also has small server for handling mocked request (api folder).
-
-2. From the project folder and api folder, which is inside, execute the following commands:
+2. From the project folder execute the following commands:
 
 To install dependencies:
 
@@ -30,7 +27,24 @@ To install dependencies:
   npm install
 ```
 
-To run the client app and the server:
+To run the client app:
+
+```shell
+  npm run dev
+```
+
+The project also has small server for handling mocked request - api folder.
+
+1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
+2. From the project folder execute the following commands:
+
+To install dependencies:
+
+```shell
+  npm install
+```
+
+To run the server:
 
 ```shell
   npm run dev
