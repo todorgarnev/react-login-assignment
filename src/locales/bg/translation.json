@@ -1,0 +1,18 @@
+{
+	"titles": {
+		"login": "Влез",
+		"changePassword": "Смяна на парола"
+	},
+	"buttons": {
+		"submit": "Прати"
+	},
+	"labels": {
+		"email": "Имейл",
+		"password": "Парола",
+		"forgotPassword": "Забравена парола",
+		"resetLink": "Имейл за смяна на паролата беше пратен на"
+	},
+	"errors": {
+		"invalidCredentials": "Невалидни входни данни"
+	}
+}

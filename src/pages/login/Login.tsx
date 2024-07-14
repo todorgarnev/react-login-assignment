@@ -37,17 +37,27 @@ export const Login: FunctionComponent = () => {
 
   return (
     <>
-      <Header>{t("login")}</Header>
+      <Header>{t("titles.login")}</Header>
 
       <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
         {submitLogin.isPending ? (
           <Loader />
         ) : (
           <>
-            <Input name="email" label="Email" error={errors.email} register={register} />
-            <Input name="password" label="Password" error={errors.password} register={register} />
+            <Input
+              name="email"
+              label={t("labels.email")}
+              error={errors.email}
+              register={register}
+            />
+            <Input
+              name="password"
+              label={t("labels.password")}
+              error={errors.password}
+              register={register}
+            />
 
-            {submitLogin.isError && <ServerError>Invalid credentials</ServerError>}
+            {submitLogin.isError && <ServerError>{t("errors.invalidCredentials")}</ServerError>}
           </>
         )}
 
@@ -56,12 +66,12 @@ export const Login: FunctionComponent = () => {
           variant={BtnVariant.BTN}
           isDisabled={!emailValue || !passwordValue || submitLogin.isPending}
         >
-          Submit
+          {t("buttons.submit")}
         </Button>
       </FormWrapper>
 
       <Button variant={BtnVariant.TEXT} clickHandler={() => navigate("/forgot-password")}>
-        Forgot password
+        {t("labels.forgotPassword")}
       </Button>
     </>
   );

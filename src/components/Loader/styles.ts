@@ -16,7 +16,7 @@ export const LoaderWrapper = styled.div`
     animation: ${loading} 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
     opacity: 1;
 
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       animation-delay: -0.5s;
     }
   }

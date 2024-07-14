@@ -1,0 +1,18 @@
+{
+	"titles": {
+		"login": "Login",
+		"changePassword": "Change Password"
+	},
+	"buttons": {
+		"submit": "Submit"
+	},
+	"labels": {
+		"email": "Email",
+		"password": "Password",
+		"forgotPassword": "Forgot Password",
+		"resetLink": "A reset link was sent to"
+	},
+	"errors": {
+		"invalidCredentials": "Invalid credentials"
+	}
+}
