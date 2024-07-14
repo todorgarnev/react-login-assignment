@@ -1,17 +1,22 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const InputWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 2rem;
-  row-gap: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   label {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
     font-size: 1.4rem;
+    transition: all 0.3s ease-in-out;
   }
 
   span {
-    grid-column: 1/-1;
     color: var(--error-color);
   }
 
@@ -21,16 +26,28 @@ export const InputWrapper = styled.div`
   }
 `;
 
-export const CustomInput = styled.input<{ $hasError: boolean }>`
+export const CustomInput = styled.input<{ $hasValue: boolean; $hasError: boolean }>`
   padding: 1rem 1.5rem;
-  flex: 1;
   border: none;
   border-radius: var(--border-radius);
   font-size: 1.2rem;
-  outline: 0.2rem solid ${({ $hasError }) => ($hasError ? "var(--error-color)" : "none")};
+  outline: 0.2rem solid ${({ $hasError }) => ($hasError ? "var(--error-color)" : "transparent")};
 
   &:focus {
     outline: 0.2rem solid
       ${({ $hasError }) => ($hasError ? "var(--error-color)" : "var(--primary-color)")};
+
+    & + label {
+      top: -1.2rem;
+    }
   }
+
+  ${({ $hasValue }) =>
+    $hasValue
+      ? css`
+          & + label {
+            top: -1.2rem;
+          }
+        `
+      : ""}
 `;

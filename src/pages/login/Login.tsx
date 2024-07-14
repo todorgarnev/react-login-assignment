@@ -47,12 +47,14 @@ export const Login: FunctionComponent = () => {
             <Input
               name="email"
               label={t("labels.email")}
+              hasValue={!!emailValue}
               error={errors.email}
               register={register}
             />
             <Input
               name="password"
               label={t("labels.password")}
+              hasValue={!!passwordValue}
               error={errors.password}
               register={register}
             />

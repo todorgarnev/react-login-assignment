@@ -41,7 +41,13 @@ export const ForgotPassword: FunctionComponent = () => {
         {submitLogin.isPending ? (
           <Loader />
         ) : (
-          <Input name="email" label={t("labels.email")} error={errors.email} register={register} />
+          <Input
+            name="email"
+            label={t("labels.email")}
+            hasValue={!!emailValue}
+            error={errors.email}
+            register={register}
+          />
         )}
 
         <Button

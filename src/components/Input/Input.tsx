@@ -6,16 +6,29 @@ import { CustomInput, InputWrapper } from "./styles";
 type InputProps = PropsWithChildren & {
   label: string;
   name: "email" | "password";
+  hasValue: boolean;
   error: FieldError | undefined;
   register: UseFormRegister<LoginForm | ForgotPasswordForm>;
 };
 
-export const Input: FunctionComponent<InputProps> = ({ label, name, error, register }) => {
+export const Input: FunctionComponent<InputProps> = ({
+  label,
+  name,
+  hasValue,
+  error,
+  register,
+}) => {
   return (
     <InputWrapper>
-      <label htmlFor={name}>{label}</label>
+      <CustomInput
+        id={name}
+        type={name}
+        $hasError={!!error}
+        $hasValue={hasValue}
+        {...register(name)}
+      />
 
-      <CustomInput id={name} type={name} $hasError={!!error} {...register(name)} />
+      <label htmlFor={name}>{label}</label>
 
       {error && <span>{error.message}</span>}
     </InputWrapper>

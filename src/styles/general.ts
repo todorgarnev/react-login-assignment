@@ -11,7 +11,7 @@ export const FormWrapper = styled.form`
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
   width: clamp(40ch, 100%, 100ch);
 
   button {
