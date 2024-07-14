@@ -1,7 +1,8 @@
 {
 	"titles": {
 		"login": "Login",
-		"changePassword": "Change Password"
+		"changePassword": "Change Password",
+		"title": "Login assignment"
 	},
 	"buttons": {
 		"submit": "Submit"
@@ -10,7 +11,10 @@
 		"email": "Email",
 		"password": "Password",
 		"forgotPassword": "Forgot Password",
-		"resetLink": "A reset link was sent to"
+		"resetLink": "A reset link was sent to",
+		"confettiAlt": "Confetti image",
+		"bgFlagAlt": "Bulgarian",
+		"usFlagAlt": "English"
 	},
 	"errors": {
 		"invalidCredentials": "Invalid credentials"

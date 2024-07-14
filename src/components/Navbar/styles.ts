@@ -16,16 +16,11 @@ export const NavWrapper = styled.nav`
   div {
     display: flex;
     gap: 1rem;
-
-    span {
-      padding: 0.5rem;
-      background-color: var(--secondary-color);
-      border-radius: 50%;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #fff;
-      }
-    }
   }
+`;
+
+export const LangIcon = styled.img<{ $isActive: boolean }>`
+  width: 2rem;
+  cursor: pointer;
+  filter: ${({ $isActive }) => ($isActive ? "grayscale(0%)" : "grayscale(100%)")};
 `;

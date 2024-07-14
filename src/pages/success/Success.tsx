@@ -10,7 +10,7 @@ export const Success: FunctionComponent = () => {
 
   return (
     <>
-      <Confetti src={confetti} alt="Confetti image" />
+      <Confetti src={confetti} alt={t("labels.confettiAlt")} />
 
       {location.state && (
         <Message>

@@ -2,15 +2,18 @@ import { FunctionComponent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Logo } from "@/assets";
+import BGFlag from "@/assets/bg-flag.png";
+import USFLag from "@/assets/us-flag.png";
 import { Languages } from "@/types";
-import { NavWrapper } from "./styles";
+import { LangIcon, NavWrapper } from "./styles";
 
 export const Navbar: FunctionComponent = () => {
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const changeLanguageHandler = (lang: string) => {
+  const langChangeHandler = (lang: Languages) => {
     i18n.changeLanguage(lang);
+    document.title = t("titles.title");
   };
 
   return (
@@ -18,8 +21,21 @@ export const Navbar: FunctionComponent = () => {
       <Logo clickHandler={() => navigate("/")} />
 
       <div>
-        <span onClick={() => changeLanguageHandler(Languages.EN)}>EN</span>
-        <span onClick={() => changeLanguageHandler(Languages.BG)}>BG</span>
+        <LangIcon
+          src={BGFlag}
+          alt={t("labels.bgFlagAlt")}
+          title={t("labels.bgFlagAlt")}
+          onClick={() => langChangeHandler(Languages.BG)}
+          $isActive={i18n.language === Languages.BG}
+        />
+
+        <LangIcon
+          src={USFLag}
+          alt={t("labels.usFlagAlt")}
+          title={t("labels.usFlagAlt")}
+          onClick={() => langChangeHandler(Languages.EN)}
+          $isActive={i18n.language === Languages.EN}
+        />
       </div>
     </NavWrapper>
   );

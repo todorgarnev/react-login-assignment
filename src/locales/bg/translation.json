@@ -1,7 +1,8 @@
 {
 	"titles": {
 		"login": "Влез",
-		"changePassword": "Смяна на парола"
+		"changePassword": "Смяна на парола",
+		"title": "Задача"
 	},
 	"buttons": {
 		"submit": "Прати"
@@ -10,7 +11,10 @@
 		"email": "Имейл",
 		"password": "Парола",
 		"forgotPassword": "Забравена парола",
-		"resetLink": "Имейл за смяна на паролата беше пратен на"
+		"resetLink": "Имейл за смяна на паролата беше пратен на",
+		"confettiAlt": "Конфети",
+		"bgFlagAlt": "Български език",
+		"usFlagAlt": "Английски език"
 	},
 	"errors": {
 		"invalidCredentials": "Невалидни входни данни"
