@@ -18,12 +18,11 @@ Create a login page containing a login form with Email and Password fields, Logi
 To run the app, follow these steps.
 
 1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
-2. Install [pnpm](https://pnpm.io/installation).
 
 The project also has small server for handling mocked request.
 You need to install both packages - FE and sever.
 
-3.From the project folder and api folder, which is inside, execute the following commands:
+2. From the project folder and api folder, which is inside, execute the following commands:
 
 To install dependencies:
 
