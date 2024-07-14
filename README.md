@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# Login Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Assignment
 
-Currently, two official plugins are available:
+Create a login page containing a login form with Email and Password fields, Login button and a "Forgot Password" link that leads to a "Forgot Password" page. The login page should display a success screen upon successful login and an error message on the same page if the login fails. The "Forgot Password" page should display a success screen indicating that a reset link was sent to the email after entering a valid email (the actual sending of the email is not required). The application should support internationalization for two languages: English and Bulgarian. Validate credentials against a local JSON file. Write the code to be scalable and maintainable, utilizing state management where necessary.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technologies and Libraries
 
-## Expanding the ESLint configuration
+1. React with Typescript
+2. React Hook Form
+3. Tanstack Query
+4. Zod
+5. React i18n
+6. Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Running The App locally
 
-- Configure the top-level `parserOptions` property like this:
+To run the app, follow these steps.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname
-  }
-};
+1. Ensure that latest [NodeJS](http://nodejs.org/) is installed.
+2. Install [pnpm](https://pnpm.io/installation).
+
+The project also has small server for handling mocked request.
+You need to install both packages - FE and sever.
+
+3.From the project folder and api folder, which is inside, execute the following commands:
+
+To install dependencies:
+
+```shell
+  npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To run the client app:
+
+```shell
+  npm run dev
+```
+
+Browse to [http://localhost:5173](http://localhost:5173) and see the running app.
